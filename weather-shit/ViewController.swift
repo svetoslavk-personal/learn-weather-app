@@ -19,8 +19,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        location.city = "london"
+        
         labelConstraints()
         search(searchBar!)
+        
+        print (location.city)
     }
     
     

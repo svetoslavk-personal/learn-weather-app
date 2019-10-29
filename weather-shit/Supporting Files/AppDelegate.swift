@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  weather
+//  weather-shit
 //
-//  Created by Macintosh HD on 14.10.19.
-//  Copyright © 2019 Svetlio. All rights reserved.
+//  Created by Boris Rashkov on 29.10.19.
+//  Copyright © 2019 Boris Rashkov. All rights reserved.
 //
 
 import UIKit
