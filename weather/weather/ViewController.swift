@@ -14,11 +14,19 @@ class ViewController: UIViewController {
     var weather : UILabel?
     var city : UILabel?
     var searchBar : UISearchBar?
+    var location = Location(city: "", country: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         labelConstraints()
+        search(searchBar!)
+    }
+    
+    
+    func search(_ sender : UISearchBar){
+        searchBar?.text = sender.text
+        print(searchBar?.text)
         apiRequest()
     }
     
@@ -58,13 +66,20 @@ class ViewController: UIViewController {
     
     func apiRequest(){
         
+        let town = searchBar?.text
         let API_Key = "900c93b2498522766b542a4e21722c03"
-        let apiUrl = URL(string: "http://api.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=\(API_Key)")
+        let apiUrl = URL(string: "http://api.openweathermap.org/data/2.5/forecast?q=\(town),bg&appid=\(API_Key)")
         guard let url = apiUrl else { return }
         let task = URLSession.shared.dataTask(with: url) { (data , response , error) in
             
             guard let data = data else{ return }
-            
+            do {
+                
+            let jsonData = try JSONSerialization.jsonObject(with: data, options: [])
+                //print(jsonData)
+            } catch {
+                print("jsonError")
+            }
             do {
                let responseJson = try JSONSerialization.jsonObject(with: data, options: [])
        
@@ -72,7 +87,18 @@ class ViewController: UIViewController {
                
                let city = dict["city"] as! [String:Any]
                DispatchQueue.main.async {
-                   self.city?.text = city["country"] as! String
+                   self.city?.text = city["name"] as! String
+                let list = dict["list"] as! [Any]
+    
+                let subList = list[0] as! [String:Any]
+                let main = subList["main"] as! [String:Any]
+                
+                DispatchQueue.main.async {
+                    guard let temp = main["temp"] else { return }
+                    var tempreture = temp as! Double
+                    tempreture = ceil(tempreture - 273.15)
+                    self.weather?.text = "\(Int(tempreture))"
+                }
                }
            } catch let jsonError {
             print (jsonError)

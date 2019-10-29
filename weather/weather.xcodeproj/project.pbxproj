@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E4F1B6F236873A1004A929F /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E4F1B6E236873A1004A929F /* city.list.json */; };
+		0E4F1B71236873E6004A929F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4F1B70236873E6004A929F /* Location.swift */; };
 		0E8E142323548D99001178D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E142223548D99001178D5 /* AppDelegate.swift */; };
 		0E8E142523548D99001178D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E142423548D99001178D5 /* SceneDelegate.swift */; };
 		0E8E142723548D99001178D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E142623548D99001178D5 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E4F1B6E236873A1004A929F /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = city.list.json; path = ../../../Downloads/city.list.json; sourceTree = "<group>"; };
+		0E4F1B70236873E6004A929F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0E8E141F23548D99001178D5 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8E142223548D99001178D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		0E8E142423548D99001178D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +65,10 @@
 		0E8E142123548D99001178D5 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				0E4F1B6E236873A1004A929F /* city.list.json */,
 				0E8E143623548DBA001178D5 /* Supporting files */,
 				0E8E142623548D99001178D5 /* ViewController.swift */,
+				0E4F1B70236873E6004A929F /* Location.swift */,
 				0E8E142823548D99001178D5 /* Main.storyboard */,
 				0E8E143023548D9B001178D5 /* Info.plist */,
 			);
@@ -93,7 +99,6 @@
 				E278707207D6702A4F87F8EC /* Pods-weather.debug.xcconfig */,
 				507A425AD9FE533C78C3A87B /* Pods-weather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -159,6 +164,7 @@
 			files = (
 				0E8E142C23548D9B001178D5 /* Assets.xcassets in Resources */,
 				0E8E142A23548D99001178D5 /* Main.storyboard in Resources */,
+				0E4F1B6F236873A1004A929F /* city.list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +219,7 @@
 			files = (
 				0E8E142723548D99001178D5 /* ViewController.swift in Sources */,
 				0E8E142323548D99001178D5 /* AppDelegate.swift in Sources */,
+				0E4F1B71236873E6004A929F /* Location.swift in Sources */,
 				0E8E142523548D99001178D5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
